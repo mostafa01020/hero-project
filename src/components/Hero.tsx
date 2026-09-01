@@ -50,10 +50,10 @@ export default function Hero({
           {images.map((item, index) => (
             <SwiperSlide key={index}>
               <div className="relative aspect-[4/3]">
-                <Image
-                  src={item.image}
-                  alt={item.alt || ""}
-                  fill
+               <Image
+               src={item.image?.startsWith('/') ? item.image : `/${item.image}`}
+               alt={item.alt || ""}
+                fill
                   className="object-cover"
                 />
               </div>
