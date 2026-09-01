@@ -47,18 +47,26 @@ export default function Hero({
           loop
           className="w-full overflow-hidden rounded-2xl"
         >
-          {images.map((item, index) => (
-            <SwiperSlide key={index}>
-              <div className="relative aspect-[4/3]">
-               <Image
-               src={item.image?.startsWith('/') ? item.image : `/${item.image}`}
-               alt={item.alt || ""}
-                fill
-                  className="object-cover"
-                />
-              </div>
-            </SwiperSlide>
-          ))}
+         {images.map((item, index) => {
+  // لو مفيش صورة مسجلة في الخانة دي، نتخطاها ومابنرسمهاش
+  if (!item.image) return null; 
+
+  // تظبيط المسار بأمان
+  const imageSrc = item.image.startsWith('/') ? item.image : `/${item.image}`;
+
+  return (
+    <SwiperSlide key={index}>
+      <div className="relative aspect-[4/3]">
+        <Image
+          src={imageSrc}
+          alt={item.alt || ""}
+          fill
+          className="object-cover"
+        />
+      </div>
+    </SwiperSlide>
+  );
+})}
         </Swiper>
 
       </div>
