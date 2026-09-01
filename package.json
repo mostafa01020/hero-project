@@ -2,14 +2,14 @@
   "name": "my-hero-project",
   "version": "0.1.0",
   "private": true,
- "scripts": {
-  "dev": "set TINA_PUBLIC_IS_LOCAL=true&& tinacms dev -c \"next dev --turbopack\"",
-  "build": "next build",
-  "start": "next start"
-},
+  "scripts": {
+    "dev": "set TINA_PUBLIC_IS_LOCAL=true&& tinacms dev -c \"next dev --turbopack\"",
+    "build": "next build",
+    "start": "next start"
+  },
   "dependencies": {
     "@tinacms/cli": "^2.6.1",
-    "next": "15.5.4",
+    "next": "^16.3.4",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "swiper": "^14.2.0",
