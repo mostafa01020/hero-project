@@ -58,11 +58,11 @@ export default function Hero({
     <SwiperSlide key={index}>
       <div className="relative aspect-[4/3]">
        <Image
-  src={imageSrc}
+  src={item.image}
   alt={item.alt || ""}
   fill
   className="object-cover"
-  unoptimized={true} 
+  unoptimized
 />
       </div>
     </SwiperSlide>
