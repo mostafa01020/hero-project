@@ -9,7 +9,7 @@ import "swiper/css/pagination";
 type HeroProps = {
   title: string;
   content: string;
-  images: string[];
+  images: any[]; // خلينا النوع any عشان يقبل الداتا القديمة والجديدة بدون إيرور
 };
 
 export default function Hero({
@@ -37,13 +37,19 @@ export default function Hero({
           loop
           className="w-full overflow-hidden rounded-2xl"
         >
-          {images && images.map((imgUrl, index) => {
-            if (!imgUrl) return null; 
+          {images && images.map((item, index) => {
+            if (!item) return null; 
+
+            // السطر السحري: لو الداتا نص هياخدها، ولو Object هياخد الرابط اللي جواها
+            const imgSrc = typeof item === 'string' ? item : (item.image || item.src);
+
+            if (!imgSrc) return null;
+
             return (
               <SwiperSlide key={index}>
                 <div className="relative aspect-[4/3]">
                   <img
-                    src={imgUrl}
+                    src={imgSrc}
                     alt={`Slide ${index + 1}`}
                     className="w-full h-full object-cover absolute inset-0"
                   />
