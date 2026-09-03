@@ -26,11 +26,11 @@ export default defineConfig({
           { type: "string", name: "content", label: "Hero Content", ui: { component: "textarea" } },
           {
             type: "object",
-            name: "slider",
+            name: "images",
             label: "Hero Images",
             list: true,
             fields: [
-              { type: "image", name: "src", label: "Image" },
+              { type: "image", name: "image", label: "Image" },
               { type: "string", name: "alt", label: "Alt Text" },
             ],
           },

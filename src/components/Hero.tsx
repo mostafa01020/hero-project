@@ -7,17 +7,17 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 type HeroImage = {
-  src: string;
+  image: string;
   alt?: string;
 };
 
 type HeroProps = {
   title: string;
   content: string;
-  slider: HeroImage[];
+  images: HeroImage[];
 };
 
-export default function Hero({ title, content, slider }: HeroProps) {
+export default function Hero({ title, content, images }: HeroProps) {
   return (
     <section className="min-h-screen flex items-center px-6 py-20">
       <div className="mx-auto grid w-full max-w-7xl items-center gap-12 lg:grid-cols-2">
@@ -37,14 +37,14 @@ export default function Hero({ title, content, slider }: HeroProps) {
           loop
           className="w-full overflow-hidden rounded-2xl"
         >
-          {slider && slider.map((item, index) => {
-            if (!item.src) return null; 
+          {images && images.map((item, index) => {
+            if (!item.image) return null; 
 
             return (
               <SwiperSlide key={index}>
                 <div className="relative aspect-[4/3]">
                   <img
-                    src={item.src}
+                    src={item.image}
                     alt={item.alt || ""}
                     className="w-full h-full object-cover absolute inset-0"
                   />

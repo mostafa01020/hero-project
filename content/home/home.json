@@ -1,13 +1,13 @@
 {
   "title": "Welcome to My Website",
   "content": "This content is controlled by TinaCMS.",
-  "slider": [
+  "images": [
     {
-      "src": "/hero-1.jpg",
+      "image": "/hero-1.jpg",
       "alt": "Hero image one"
     },
     {
-      "src": "/hero-2.jpg",
+      "image": "/hero-2.jpg",
       "alt": "Hero image two"
     }
   ]
