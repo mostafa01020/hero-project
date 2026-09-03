@@ -2,9 +2,21 @@
   "title": "Welcome to My Website",
   "content": "This content is controlled by TinaCMS. I can edit it from the admin panel.",
   "images": [
-    "/hero-1.jpg",
-    "/hero-2.jpg",
-    "/hero-3.jpg",
-    "/134217867803996493.jpg"
+    {
+      "image": "/hero-1.jpg",
+      "alt": "Hero image one"
+    },
+    {
+      "image": "/hero-2.jpg",
+      "alt": "Hero image two"
+    },
+    {
+      "image": "/hero-3.jpg",
+      "alt": "Hero image three"
+    },
+    {
+      "image": "/134217867803996493.jpg",
+      "alt": "new one"
+    }
   ]
 }
