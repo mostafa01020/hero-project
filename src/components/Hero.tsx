@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 
@@ -47,25 +46,21 @@ export default function Hero({
           loop
           className="w-full overflow-hidden rounded-2xl"
         >
-         {images.map((item, index) => {
-  // لو مفيش صورة مسجلة في الخانة دي، نتخطاها ومابنرسمهاش
-  if (!item.image) return null; 
+          {images && images.map((item, index) => {
+            if (!item.image) return null; 
 
-  // تظبيط المسار بأمان
-  const imageSrc = item.image.startsWith('/') ? item.image : `/${item.image}`;
-
-  return (
-    <SwiperSlide key={index}>
-      <div className="relative aspect-[4/3]">
-       <img
-  src={item.image}
-  alt={item.alt || ""}
-  className="w-full h-full object-cover absolute inset-0"
-/>
-      </div>
-    </SwiperSlide>
-  );
-})}
+            return (
+              <SwiperSlide key={index}>
+                <div className="relative aspect-[4/3]">
+                  <img
+                    src={item.image}
+                    alt={item.alt || ""}
+                    className="w-full h-full object-cover absolute inset-0"
+                  />
+                </div>
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
 
       </div>

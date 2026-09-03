@@ -12,11 +12,11 @@ export default defineConfig({
   },
 
   media: {
-  tina: {
-    publicFolder: "public",
-    mediaRoot: "uploads", 
+    tina: {
+      publicFolder: "public",
+      mediaRoot: "uploads", 
+    },
   },
-},
 
   schema: {
     collections: [
