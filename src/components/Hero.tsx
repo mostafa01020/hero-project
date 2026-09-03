@@ -6,15 +6,10 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-type HeroImage = {
-  image: string;
-  alt?: string;
-};
-
 type HeroProps = {
   title: string;
   content: string;
-  images: HeroImage[];
+  images: string[];
 };
 
 export default function Hero({
@@ -30,7 +25,6 @@ export default function Hero({
           <h1 className="text-5xl font-bold tracking-tight md:text-6xl">
             {title}
           </h1>
-
           <p className="mt-6 max-w-xl text-lg text-gray-600">
             {content}
           </p>
@@ -39,22 +33,18 @@ export default function Hero({
         <Swiper
           modules={[Autoplay, Pagination]}
           pagination={{ clickable: true }}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
           loop
           className="w-full overflow-hidden rounded-2xl"
         >
-          {images && images.map((item, index) => {
-            if (!item.image) return null; 
-
+          {images && images.map((imgUrl, index) => {
+            if (!imgUrl) return null; 
             return (
               <SwiperSlide key={index}>
                 <div className="relative aspect-[4/3]">
                   <img
-                    src={item.image}
-                    alt={item.alt || ""}
+                    src={imgUrl}
+                    alt={`Slide ${index + 1}`}
                     className="w-full h-full object-cover absolute inset-0"
                   />
                 </div>

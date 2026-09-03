@@ -47,11 +47,12 @@ export default defineConfig({
             label: "Hero Images",
             list: true,
             fields: [
-              {
-                type: "image",
-                name: "image",
-                label: "Image",
-              },
+            {
+  type: "image",
+  name: "images",
+  label: "Hero Slider Images",
+  list: true,
+},
               {
                 type: "string",
                 name: "alt",
